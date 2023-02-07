@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 
@@ -26,6 +27,8 @@ public class Projeto {
     private Instant dataFim;
 
     private Instant dataPrevisaoFim;
+
+    private BigDecimal orcamento;
 
     @Column(columnDefinition = "TEXT")
     private String descricao;
