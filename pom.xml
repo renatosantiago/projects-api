@@ -57,23 +57,6 @@
 	</dependencies>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.22.2</version>
-					<configuration>
-        					<testFailureIgnore>true</testFailureIgnore>
-    					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>com.evconnect.phrase</groupId>
-					<artifactId>phrase-maven-plugin</artifactId>
-					<version>${evcloud.version}</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
