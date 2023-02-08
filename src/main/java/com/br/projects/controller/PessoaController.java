@@ -1,6 +1,5 @@
 package com.br.projects.controller;
 
-import com.br.projects.dto.GerenteDto;
 import com.br.projects.dto.PessoaDto;
 import com.br.projects.dto.PessoaMembroDto;
 import com.br.projects.service.PessoaService;
@@ -20,7 +19,7 @@ public class PessoaController {
 
 
     @PostMapping
-    public ResponseEntity salvarPessoa(@RequestBody PessoaDto dto) {
+    public ResponseEntity<Void> salvarPessoa(@RequestBody PessoaDto dto) {
         pessoaService.salvarPessoa(dto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

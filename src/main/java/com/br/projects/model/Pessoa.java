@@ -1,6 +1,5 @@
 package com.br.projects.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 

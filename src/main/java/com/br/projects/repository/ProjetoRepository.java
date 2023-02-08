@@ -1,6 +1,5 @@
 package com.br.projects.repository;
 
-import com.br.projects.dto.PessoaMembroDto;
 import com.br.projects.dto.ProjetoMembroDto;
 import com.br.projects.model.Projeto;
 import org.springframework.data.jpa.repository.JpaRepository;

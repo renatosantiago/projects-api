@@ -17,7 +17,7 @@ public class ProjetoController {
     private ProjetoService projetoService;
 
     @PostMapping
-    public ResponseEntity salvarProjeto(@RequestBody ProjetoDto dto) {
+    public ResponseEntity<Void> salvarProjeto(@RequestBody ProjetoDto dto) {
         projetoService.salvarProjeto(dto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
@@ -33,7 +33,7 @@ public class ProjetoController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<?> atualizarProjeto(@PathVariable Long id, @RequestBody ProjetoDto dto) {
+    public ResponseEntity<ProjetoDto> atualizarProjeto(@PathVariable Long id, @RequestBody ProjetoDto dto) {
         if(id != dto.getId().longValue()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }

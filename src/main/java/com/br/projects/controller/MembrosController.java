@@ -16,7 +16,7 @@ public class MembrosController {
     MembrosService service;
 
     @PostMapping
-    public ResponseEntity salvarMembro(@RequestBody MembroDto dto) {
+    public ResponseEntity<Void> salvarMembro(@RequestBody MembroDto dto) {
         service.salvarMembro(dto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

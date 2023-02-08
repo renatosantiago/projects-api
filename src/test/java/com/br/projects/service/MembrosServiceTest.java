@@ -24,7 +24,7 @@ public class MembrosServiceTest {
     private MembrosMapper mapper;
 
     @Test
-    public void salvarMembro_Deve_Salvar_Membro_Do_Projeto() {
+    void salvarMembro_Deve_Salvar_Membro_Do_Projeto() {
         MembroDto dto = getMembroDto();
         Membros membros = getMembros();
 

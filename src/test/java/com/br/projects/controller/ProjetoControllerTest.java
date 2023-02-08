@@ -45,7 +45,7 @@ public class ProjetoControllerTest {
     }
 
     @Test
-    public void salvarProjeto_Deve_Salvar_Projeto() throws Exception {
+    void salvarProjeto_Deve_Salvar_Projeto() throws Exception {
         String jsonBody = mapper.writeValueAsString(getCriarDto());
         ResultActions result =
                 mockMvc.perform(post("/projeto")
@@ -56,7 +56,7 @@ public class ProjetoControllerTest {
     }
 
     @Test
-    public void atualizarProjeto_Deve_Lancar_BadRequestException_Com_Id_Diferentes() throws Exception {
+    void atualizarProjeto_Deve_Lancar_BadRequestException_Com_Id_Diferentes() throws Exception {
         String jsonBody = mapper.writeValueAsString(getDto(1L));
         ResultActions result =
                 mockMvc.perform(put("/projeto/{id}", idNaoExistente)
@@ -67,7 +67,7 @@ public class ProjetoControllerTest {
     }
 
     @Test
-    public void atualizarProjeto_Deve_Atualizar_Projeto() throws Exception {
+    void atualizarProjeto_Deve_Atualizar_Projeto() throws Exception {
         String jsonBody = mapper.writeValueAsString(getDto(1L));
         ResultActions result =
                 mockMvc.perform(put("/projeto/{id}", idProjeto)
@@ -78,7 +78,7 @@ public class ProjetoControllerTest {
     }
 
     @Test
-    public void excluirProjeto_Deve_Lancar_Exececao_ResourceNotFoundException() throws Exception {
+    void excluirProjeto_Deve_Lancar_Exececao_ResourceNotFoundException() throws Exception {
         Mockito.doThrow(ResourceNotFoundException.class).when(service).excluirProjeto(idNaoExistente);
         ResultActions result =
                 mockMvc.perform(delete("/projeto/{id}", idNaoExistente)
@@ -87,7 +87,7 @@ public class ProjetoControllerTest {
     }
 
     @Test
-    public void listarProjetos_Deve_Listar_Projetos() throws Exception {
+    void listarProjetos_Deve_Listar_Projetos() throws Exception {
         ResultActions result =
                 mockMvc.perform(get("/projeto/listar")
                         .accept(MediaType.APPLICATION_JSON));

@@ -1,6 +1,5 @@
 package com.br.projects.service;
 
-import com.br.projects.dto.GerenteDto;
 import com.br.projects.dto.PessoaDto;
 import com.br.projects.dto.PessoaMembroDto;
 import com.br.projects.mapper.PessoaMapper;

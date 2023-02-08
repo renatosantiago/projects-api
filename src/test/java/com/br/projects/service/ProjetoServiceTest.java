@@ -16,7 +16,6 @@ import org.mockito.Mockito;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.util.Optional;
 
 @ExtendWith(SpringExtension.class)
@@ -46,7 +45,7 @@ public class ProjetoServiceTest {
     }
 
     @Test
-    public void salvarProjeto_Deve_Salvar_Projeto() {
+    void salvarProjeto_Deve_Salvar_Projeto() {
         Assertions.assertDoesNotThrow(() -> {
             service.salvarProjeto(dto);
         });
@@ -54,7 +53,7 @@ public class ProjetoServiceTest {
     }
 
     @Test
-    public void atualizarProjeto_Deve_Atualizar_Projeto() {
+    void atualizarProjeto_Deve_Atualizar_Projeto() {
         dtoEdited = getEditedDto();
         savedEntity = getProjetoCriado("Em Andamento");
 
@@ -64,12 +63,12 @@ public class ProjetoServiceTest {
 
         ProjetoDto result = service.atualizarProjeto(dtoEdited);
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(result.getId(), 1L);
+        Assertions.assertEquals(1L, result.getId());
         Mockito.verify(repository, Mockito.times(1)).save(savedEntity);
     }
 
     @Test
-    public void excluirProjeto_Deve_Lancar_Exececao_ResourceNotFoundException() {
+    void excluirProjeto_Deve_Lancar_Exececao_ResourceNotFoundException() {
         Mockito.doThrow(ResourceNotFoundException.class).when(repository).findById(idNaoExistente);
         Assertions.assertThrows(ResourceNotFoundException.class, () -> {
             service.excluirProjeto(idNaoExistente);
@@ -78,7 +77,7 @@ public class ProjetoServiceTest {
     }
 
     @Test
-    public void excluirProjeto_Deve_Lancar_Excecao_NotAuthorizedActionException_Para_Status_Nao_Permitido() {
+    void excluirProjeto_Deve_Lancar_Excecao_NotAuthorizedActionException_Para_Status_Nao_Permitido() {
         savedEntity = getProjetoCriado("Em Andamento");
         Mockito.when(repository.findById(idProjeto)).thenReturn(Optional.of(savedEntity));
         Assertions.assertThrows(NotAuthorizedActionException.class, () -> {
@@ -87,7 +86,7 @@ public class ProjetoServiceTest {
     }
 
     @Test
-    public void excluirProjeto_Deve_Excluir_Projeto() {
+    void excluirProjeto_Deve_Excluir_Projeto() {
         savedEntity = getProjetoCriado("Em Análise");
         Mockito.when(repository.findById(idProjeto)).thenReturn(Optional.of(savedEntity));
         Assertions.assertDoesNotThrow(() -> {
