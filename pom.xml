@@ -201,5 +201,16 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<repositories>
+	    <repository>
+	      <id>Central Maven repository</id>
+	      <name>Central Maven repository https</name>
+	      <url>https://repo.maven.apache.org/maven2</url>
+	    </repository>
+	    <repository>
+	      <id>confluent</id>
+	      <name>Confluent repository</name>
+	      <url>https://packages.confluent.io/maven/</url>
+	    </repository>
+	  </repositories>
 </project>
