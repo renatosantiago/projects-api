@@ -98,11 +98,8 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
 				<configuration>
-				    <!-- Force alphabetical order to have a reproducible build -->
-				    <runOrder>alphabetical</runOrder>
-				    <useSystemClassLoader>false</useSystemClassLoader>
+					<useSystemClassLoader>false</useSystemClassLoader>
 				</configuration>
 			</plugin>
 		</plugins>
